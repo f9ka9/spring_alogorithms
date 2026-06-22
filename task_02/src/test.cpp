@@ -9,3 +9,7 @@ TEST(ZeroOneBoundary, FindsMinimalCase) {
 TEST(ZeroOneBoundary, FindsMiddleCase) {
   EXPECT_EQ(FindZeroOneBoundary({0, 0, 0, 1, 1}), 2);
 }
+
+TEST(ZeroOneBoundary, FindsLateCase) {
+  EXPECT_EQ(FindZeroOneBoundary({0, 0, 0, 0, 0, 1}), 4);
+}

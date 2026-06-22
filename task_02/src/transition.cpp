@@ -1,10 +1,17 @@
 #include "transition.hpp"
 
 int FindZeroOneBoundary(const std::vector<int>& values) {
-  for (int index = 0; index + 1 < static_cast<int>(values.size()); ++index) {
-    if (values[index] == 0 && values[index + 1] == 1) {
-      return index;
+  int left = 0;
+  int right = static_cast<int>(values.size()) - 1;
+
+  while (left < right) {
+    const int middle = left + (right - left) / 2;
+    if (values[middle] == 0) {
+      left = middle + 1;
+    } else {
+      right = middle;
     }
   }
-  return -1;
+
+  return left - 1;
 }

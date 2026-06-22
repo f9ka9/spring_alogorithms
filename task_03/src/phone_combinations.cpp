@@ -3,6 +3,10 @@
 #include <array>
 
 std::vector<std::string> BuildPhoneCombinations(const std::string& digits) {
+  if (digits.empty()) {
+    return {};
+  }
+
   static const std::array<std::string, 10> letters = {
       "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz",
   };
