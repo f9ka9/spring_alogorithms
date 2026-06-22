@@ -1,4 +1,9 @@
-
 #include <gtest/gtest.h>
 
-TEST(TopologySort, Simple) { ASSERT_EQ(1, 1); }
+#include "phone_combinations.hpp"
+
+TEST(PhoneCombinations, BuildsLexicographicOrder) {
+  EXPECT_EQ(BuildPhoneCombinations("23"),
+            (std::vector<std::string>{"ad", "ae", "af", "bd", "be", "bf",
+                                      "cd", "ce", "cf"}));
+}
