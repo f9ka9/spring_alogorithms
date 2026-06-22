@@ -2,9 +2,7 @@
 
 #include <utility>
 
-namespace {
-
-int Partition(std::vector<int>& values, int left, int right) {
+static int Partition(std::vector<int>& values, int left, int right) {
   const int pivot = values[left + (right - left) / 2];
   int first = left;
   int second = right;
@@ -24,8 +22,6 @@ int Partition(std::vector<int>& values, int left, int right) {
   }
 
   return first;
-}
-
 }
 
 int KthOrderStatistic(std::vector<int> values, int statistic) {

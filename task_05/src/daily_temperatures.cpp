@@ -8,8 +8,7 @@ std::vector<int> DaysUntilWarmerTemperature(
   std::vector<int> stack;
 
   for (int index = 0; index < static_cast<int>(temperatures.size()); ++index) {
-    while (!stack.empty() &&
-           temperatures[index] > temperatures[stack.back()]) {
+    while (!stack.empty() && temperatures[index] > temperatures[stack.back()]) {
       const int colder_day = stack.back();
       stack.pop_back();
       result[colder_day] = index - colder_day;

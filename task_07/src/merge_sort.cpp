@@ -1,9 +1,7 @@
 #include "merge_sort.hpp"
 
-namespace {
-
-void MergeSortImpl(std::vector<int>& values, std::vector<int>& buffer,
-                   int left, int right) {
+static void MergeSortImpl(std::vector<int>& values, std::vector<int>& buffer,
+                          int left, int right) {
   if (right - left <= 1) {
     return;
   }
@@ -27,8 +25,6 @@ void MergeSortImpl(std::vector<int>& values, std::vector<int>& buffer,
   for (int index = left; index < right; ++index) {
     values[index] = buffer[index];
   }
-}
-
 }
 
 void MergeSort(std::vector<int>& values) {

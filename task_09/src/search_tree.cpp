@@ -33,7 +33,8 @@ bool SearchTree::Find(const std::unique_ptr<Node>& node, int key) {
   return Find(key < node->key ? node->left : node->right, key);
 }
 
-void SearchTree::Insert(std::unique_ptr<Node>& node, std::unique_ptr<Node> item) {
+void SearchTree::Insert(std::unique_ptr<Node>& node,
+                        std::unique_ptr<Node> item) {
   if (!node) {
     node = std::move(item);
     return;
